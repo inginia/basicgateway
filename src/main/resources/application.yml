@@ -1,0 +1,24 @@
+server:
+  port: 9001
+spring:
+  cloud:
+    gateway:
+      httpserver:
+        wiretap: true
+      httpclient:
+        wiretap: true
+      routes:
+        - id: sanef
+          uri: http://35.231.60.190
+          predicates:
+            - Path=/sanef_api_thirdparty/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway, health
+
+logging:
+  level:
+    reactor:
+      netty: DEBUG
