@@ -7,6 +7,11 @@ spring:
         wiretap: true
       httpclient:
         wiretap: true
+        proxy:
+          host: velodrome.usefixie.com
+          port: 80
+          username: fixie
+          password: ${FIXIE_PASSWORD}
       routes:
         - id: sanef
           uri: http://35.231.60.190
@@ -17,8 +22,3 @@ management:
     web:
       exposure:
         include: env, health, gateway, info, metrics
-
-logging:
-  level:
-    reactor:
-      netty: DEBUG
