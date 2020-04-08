@@ -7,6 +7,7 @@ spring:
         wiretap: true
       httpclient:
         wiretap: true
+        response-timeout: 120s
         proxy:
           host: velodrome.usefixie.com
           port: 80
@@ -17,6 +18,10 @@ spring:
           uri: http://35.231.60.190
           predicates:
             - Path=/sanef_api_thirdparty/**
+        - id: zenith
+          uri: ${ZENITH_HOST}
+          predicates:
+            - Path=/AgencyBankingService/**
 management:
   endpoints:
     web:
