@@ -22,6 +22,10 @@ spring:
           uri: ${ZENITH_HOST}
           predicates:
             - Path=/AgencyBankingService/**
+        - id: unity
+          uri: ${UNITY_HOST}
+          predicates:
+            - Path=/api/**
 management:
   endpoints:
     web:
